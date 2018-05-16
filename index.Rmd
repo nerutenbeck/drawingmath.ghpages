@@ -87,7 +87,7 @@ field_types <- c(
 
 ## Import data ----
 
-grade_summary <- read_csv("grade_summary.csv")
+grade_summary <- read_csv("data/grade_summary.csv")
 
 report_theme <- theme_classic() +
     theme(
