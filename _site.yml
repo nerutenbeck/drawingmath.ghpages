@@ -1,4 +1,9 @@
-name: "drawingmath"
-output_dir: "."
+name: drawingmath
+output_dir: '.'
 navbar:
   title: "Drawing Math"
+output:
+  html_document:
+    lib_dir: site_libs
+    self_contained: no
+

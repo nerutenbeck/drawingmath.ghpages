@@ -1,5 +1,4 @@
 ---
-title: "Drawing Math Website"
 output: 
   html_document: 
     toc: yes
