@@ -1,0 +1,4 @@
+name: "drawingmath"
+output_dir: "."
+navbar:
+  title: "Drawing Math"

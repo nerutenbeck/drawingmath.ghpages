@@ -1,0 +1,389 @@
+---
+title: "Drawing Math Website"
+output: 
+  html_document: 
+    toc: yes
+runtime: shiny
+---
+
+## Overview
+
+Here is a dummy website with table of contents and web apps! I can easily modify the appearnace as you like or add a CSS file that Michelle generates to modify the appearance. Note that it is also possible to set up to render this document to a website hosted by GitHub, and then you can just point everybody there. I can also generate the elements statically, and you can hand them off to Michelle. Up to you!
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(shiny)
+
+## Factor levels ----
+
+field_levels <- c(
+  "One student depicted individually",
+  "Multiple students",
+  "Students depicted positively",
+  "Students depicted negatively",
+  "Students depicted neutrally",
+  "Can't discern student depiction",
+  "Student to student communication",
+  "Student to teacher communication",
+  "Working individually",
+  "Working in small groups",
+  "Large group setting",
+  "At desks",
+  "On rug",
+  "Student desks clustered",
+  "Student desks in rows/grid",
+  "Teacher is depicted",
+  "More than one adult/teacher depicted",
+  "Teacher depicted positively",
+  "Teacher depicted negatively",
+  "Teacher depicted neutrally",
+  "Can't discern teacher depiction",
+  "At teacher desk",
+  "At front of the room/board",
+  "Speaking/thinking",
+  "Working with individual student",
+  "Working with small groups of students",
+  "Working with whole class",
+  "Teacher depicted on the rug",
+  "Addition",
+  "Subtraction",
+  "Multiplication",
+  "Division",
+  "Clocks/Calendar",
+  "Fractions/Decimals",
+  "Counting/Number Line",
+  "Geometry ",
+  "Can't discern math",
+  "Whiteboard/Smart board",
+  "Books/paper/pencil",
+  "Computer technology for students",
+  "Computer technology for teachers",
+  "Computer technology other",
+  "Manipulative/blocks/hands-on math tools",
+  "Games",
+  "Arrays or tools depicting visual display of math concept",
+  "Flash cards",
+  "Dot cards",
+  "Student Whiteboards",
+  "Rug/carpet",
+  "Stations/centers around classroom",
+  "Teacher desk",
+  "Kidney-shaped table",
+  "Classroom decorations",
+  "Projector",
+  "Non-traditional furniture"
+) %>%
+  str_wrap(40)
+
+field_types <- c(
+  "Student Attributes",
+  "Teacher Attributes",
+  "Type of Math Depicted",
+  "Tools and Technology Depicted",
+  "Furniture"
+)
+
+## Import data ----
+
+grade_summary <- read_csv("grade_summary.csv")
+
+report_theme <- theme_classic() +
+    theme(
+      axis.text.y = element_text(size = 7, color = "black"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      legend.title = element_blank(),
+      strip.text = element_text(size = 6),
+      axis.line.x = element_line(size = 0.5, color = "black"),
+      plot.background = element_rect(fill = NA, color = "black"),
+      plot.title = element_text(size = 10)
+    )
+
+```
+
+### Classroom tools and resources by grade
+
+```{r tool_figure}
+
+tool_subset <- str_wrap(c(
+  "Whiteboard/Smart board",
+  "Books/paper/pencil",
+  "Computer technology for students",
+  "Computer technology for teachers"
+  ), 20)
+
+tool_data <- grade_summary %>%
+  filter(field_label %in% tool_subset)
+
+tool_title <- paste(
+  "Emergence of different tools and resources in drawings of math classrooms"
+)
+
+ggplot(
+  data = tool_data,
+  aes(
+    x = source,
+    y = mu,
+    fill = field_label
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    width = 0.7,
+    position = "dodge"
+  ) +
+  geom_text(
+    aes(
+      x = source,
+      y = mu + 0.03,
+      label = scales::percent(round(mu, 2))
+    ),
+    vjust = 0.5,
+    position = position_dodge(0.7),
+    size = 2.5
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+    guides(fill = guide_legend(reverse = T)) +
+  ggtitle(tool_title) +
+  coord_flip() +
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 1, by = 0.2),
+    limits = c(0, 1.1),
+    labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+  ) +
+  report_theme +
+  theme(
+    legend.text = element_text(size = 6),
+    legend.key.height = unit(8, "mm")
+  )
+
+```
+
+### Math subjects by grade
+
+```{r subject_data}
+
+subjects <- c("Division", "Multiplication", "Subtraction", "Addition")
+
+subject_data <- grade_summary %>%
+  filter(field_label %in% subjects) %>%
+  mutate(
+    field_label = factor(
+      field_label,
+      levels = subjects
+    )
+  )
+
+```
+
+
+#### Here is an example web app
+
+We can make the app display any data we want, and the visualizations can get more complex. Here it is just showing an alternate way of visualizing the following seven figures via dropdown menu.
+
+```{r subject_app}
+inputPanel(
+  selectInput("grade", label = "Grade",
+              choices = c(1:7), selected = 1)
+)
+
+renderPlot({
+   ggplot(
+  data = filter(subject_data, grade == input$grade),
+  aes(
+    x = field_label,
+    y = mu,
+    fill = field_label
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    width = 0.7,
+    position = "dodge",
+    show.legend = F
+  ) +
+  geom_text(
+    aes(
+      x = field_label,
+      y = mu + 0.05,
+      label = scales::percent(round(mu, 2))
+    ),
+    vjust = 0.5,
+    position = position_dodge(0.7),
+    size = 4
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+    guides(fill = guide_legend(reverse = T)) +
+  ggtitle(paste("Grade", input$grade)) +
+  coord_flip() +
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 1, by = 0.2),
+    limits = c(0, 1.1),
+    labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+  ) +
+  report_theme +
+  theme(
+    legend.text = element_text(size = 6),
+    legend.key.height = unit(8, "mm"),
+    axis.text.y = element_text(size = 10, color = "black")
+  )
+})
+```
+
+#### Static rendering
+
+This is just a static rendering of the information shown in the web app.
+
+```{r subject_grade}
+
+for (g in unique(grade_summary$grade)) {
+  
+plot <- ggplot(
+  data = filter(subject_data, grade == g),
+  aes(
+    x = field_label,
+    y = mu,
+    fill = field_label
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    width = 0.7,
+    position = "dodge",
+    show.legend = F
+  ) +
+  geom_text(
+    aes(
+      x = field_label,
+      y = mu + 0.05,
+      label = scales::percent(round(mu, 2))
+    ),
+    vjust = 0.5,
+    position = position_dodge(0.7),
+    size = 4
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+    guides(fill = guide_legend(reverse = T)) +
+  ggtitle(paste("Grade", g)) +
+  coord_flip() +
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 1, by = 0.2),
+    limits = c(0, 1.1),
+    labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+  ) +
+  report_theme +
+  theme(
+    legend.text = element_text(size = 6),
+    legend.key.height = unit(8, "mm")
+  )
+
+print(plot)
+  
+}
+
+```
+
+```{r subjects_all_grades}
+
+subject_title <- paste(
+  "Emergence of different math subjects across grade levels"
+)
+
+ggplot(
+  data = subject_data,
+  aes(
+    x = source,
+    y = mu,
+    fill = field_label
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    width = 0.7,
+    position = "dodge"
+  ) +
+  geom_text(
+    aes(
+      x = source,
+      y = mu + 0.03,
+      label = scales::percent(round(mu, 2))
+    ),
+    vjust = 0.5,
+    position = position_dodge(0.7),
+    size = 2.5
+  ) +
+  scale_fill_brewer(palette = "Set3") +
+  guides(fill = guide_legend(reverse = T)) +
+  ggtitle(subject_title) +
+  coord_flip() +
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 1, by = 0.2),
+    limits = c(0, 1.1),
+    labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+  ) +
+  report_theme +
+  theme(
+    legend.text = element_text(size = 6),
+    legend.key.height = unit(8, "mm")
+  )
+```
+
+### All studywide data
+
+This is a simple similar dropdown web app showing picture elements by grade, with the dropdown selecting which question type to look at.
+
+```{r all_data_app}
+inputPanel(
+  selectInput("type", label = "Drawing Features",
+              choices = c(field_types), selected = 1)
+)
+
+renderPlot({
+  ggplot(
+    data = filter(grade_summary, field_type == input$type),
+    aes(
+      x = field_label,
+      y = mu,
+      fill = source
+    )
+  ) +
+    geom_bar(
+      aes(
+        x = field_label,
+        y = mu
+      ),
+      stat = "identity",
+      width = 0.7,
+      position = "dodge"
+    ) +
+    # geom_text(
+    #   aes(
+    #     x = field_label,
+    #     y = mu + 0.05,
+    #     label = scales::percent(round(mu, 2))
+    #   ),
+    #   vjust = 0.5,
+    #   position = position_dodge(0.7),
+    #   size = 1
+    # ) +
+    ggtitle(input$type) +
+    guides(fill = guide_legend(reverse = T)) +
+    coord_flip() +
+    scale_fill_brewer(palette = "YlGn", direction = -1) +
+    scale_y_continuous(
+      breaks = seq(from = 0, to = 1, by = 0.2),
+      limits = c(0, 1.1),
+      labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+    ) +
+    report_theme +
+    theme(
+      axis.text.y = element_text(size = 10, color = "black")
+    )
+}, height = 850
+)
+
+```
+
