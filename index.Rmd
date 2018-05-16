@@ -6,8 +6,7 @@ output:
 
 ## Overview
 
-Here is a dummy website. It is hosted on github pages now. All the data is protected.
-We can style this however you want.
+Here is a dummy website. It is hosted on github pages now. All the data is protected. We can style this however you want. It is also possible to register a custom domain name (e.g. drawingmath.org or whatever).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
