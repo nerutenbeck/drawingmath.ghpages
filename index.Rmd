@@ -85,7 +85,10 @@ field_types <- c(
 
 ## Import data ----
 
-grade_summary <- read_csv("data/grade_summary.csv")
+grade_summary <- read_csv("data/grade_summary.csv") %>%
+  mutate(
+    source = factor(source, levels = paste("Grade", 7:1))
+    )
 
 report_theme <- theme_classic() +
     theme(
