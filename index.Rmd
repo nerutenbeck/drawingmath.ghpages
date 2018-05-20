@@ -90,6 +90,22 @@ grade_summary <- read_csv("data/grade_summary.csv") %>%
     source = factor(source, levels = paste("Grade", 7:1))
     )
 
+response_rates <- read_csv("data/response_rates.csv") %>%
+  mutate(school = replace(
+    school, school == "studywide", "All Schools"
+  ))
+
+study_summary <- read_csv("data/study_summary.csv") %>%
+  mutate(
+    field_type = factor(field_type, levels = field_types),
+    field_label = str_wrap(field_label, 20),
+    field_label = factor(
+      field_label,
+      levels = str_wrap(field_levels, 20)
+    )
+  )
+
+
 report_theme <- theme_classic() +
     theme(
       axis.text.y = element_text(size = 7, color = "black"),
@@ -104,6 +120,58 @@ report_theme <- theme_classic() +
     )
 
 ```
+
+```{r response_table}
+
+response_rates[is.na(response_rates)] <- ""
+
+knitr::kable(
+  response_rates,
+  col.names = c(
+    "", paste("Grade", names(response_rates[2:8])), "All Grades")
+  )
+  
+```
+
+```{r studywide_results, fig.height = 12}
+
+ggplot() +
+    geom_bar(
+      data = study_summary,
+      aes(
+        x = field_label,
+        y = mu,
+        fill = field_type
+      ),
+      stat = "identity",
+      width = 0.7,
+      position = "dodge",
+      show.legend = F
+    ) +
+    geom_text(
+      data = study_summary,
+      aes(
+        x = field_label,
+        y = mu + 0.05,
+        label = scales::percent(round(mu, 2))
+      ),
+      vjust = 0.5,
+      position = position_dodge(0.7),
+      size = 3
+    ) +
+  ggtitle("Drawing Math Studywide Results") +
+  coord_flip() +
+  scale_fill_brewer(palette = "Accent") +
+    scale_y_continuous(
+      breaks = seq(from = 0, to = 1, by = 0.2),
+      limits = c(0, 1.1),
+      labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
+    ) +
+  facet_grid (field_type ~., scales = "free", space = "free_y") +
+  report_theme
+
+```
+
 
 ### Classroom tools and resources by grade
 
