@@ -87,13 +87,14 @@ field_types <- c(
 
 grade_summary <- read_csv("data/grade_summary.csv") %>%
   mutate(
-    source = factor(source, levels = paste("Grade", 7:1))
+    source = factor(
+      source, 
+      levels = c("All grade 6+", paste("All grade", 5:1), "All grade K")
     )
+  )
 
 response_rates <- read_csv("data/response_rates.csv") %>%
-  mutate(school = replace(
-    school, school == "studywide", "All Schools"
-  ))
+  mutate(school = c(paste("School", 1:9), "All Schools"))
 
 study_summary <- read_csv("data/study_summary.csv") %>%
   mutate(

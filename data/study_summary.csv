@@ -1,87 +1,87 @@
 field,field_type,field_label,n,mu,se,source,school
 Furniture: Classroom decorations,Furniture,"Classroom
-decorations",1736,0.06624423963133641,0.005970916078518951,Studywide,All Schools
-Furniture: Kidney-shaped table,Furniture,Kidney-shaped table,1736,0.05011520737327189,0.005238060300689875,Studywide,All Schools
+decorations",1739,0.0655549166187464,0.005936830370493854,Studywide,All Schools
+Furniture: Kidney-shaped table,Furniture,Kidney-shaped table,1739,0.050028752156411734,0.005229259327583894,Studywide,All Schools
 Furniture: Non-traditional furniture,Furniture,"Non-traditional
-furniture",1736,0.016705069124423964,0.0030769206686453105,Studywide,All Schools
-Furniture: Projector,Furniture,Projector,1736,0.036290322580645164,0.004489715116321734,Studywide,All Schools
-Furniture: Rug/carpet,Furniture,Rug/carpet,1736,0.1261520737327189,0.007971047321640671,Studywide,All Schools
+furniture",1739,0.01667625071880391,0.0030716560663728073,Studywide,All Schools
+Furniture: Projector,Furniture,Projector,1739,0.03622771707878091,0.004482113127346243,Studywide,All Schools
+Furniture: Rug/carpet,Furniture,Rug/carpet,1739,0.12248418631397355,0.007863983624394895,Studywide,All Schools
 Furniture: Stations/centers around classroom,Furniture,"Stations/centers
-around classroom",1736,0.06624423963133641,0.005970916078518951,Studywide,All Schools
-Furniture: Teacher desk,Furniture,Teacher desk,1736,0.1445852534562212,0.008443074611697254,Studywide,All Schools
-Student Attributes: At desks,Student Attributes,At desks,1736,0.39400921658986177,0.011731038507163154,Studywide,All Schools
+around classroom",1739,0.06612995974698102,0.005960977252985622,Studywide,All Schools
+Furniture: Teacher desk,Furniture,Teacher desk,1739,0.14203565267395055,0.008373526905929435,Studywide,All Schools
+Student Attributes: At desks,Student Attributes,At desks,1739,0.3956296722254169,0.011729273389532285,Studywide,All Schools
 Student Attributes: Can't discern student depiction,Student Attributes,"Can't discern
-student depiction",1736,0.33294930875576034,0.011314066798653476,Studywide,All Schools
-Student Attributes: Large group setting,Student Attributes,Large group setting,1736,0.2563364055299539,0.010481988194107289,Studywide,All Schools
-Student Attributes: Multiple students,Student Attributes,Multiple students,1736,0.5904377880184332,0.011805850317878243,Studywide,All Schools
+student depiction",1739,0.3329499712478436,0.011304303484479689,Studywide,All Schools
+Student Attributes: Large group setting,Student Attributes,Large group setting,1739,0.2547441058079356,0.010451530585462375,Studywide,All Schools
+Student Attributes: Multiple students,Student Attributes,Multiple students,1739,0.5934445083381253,0.011782164649707742,Studywide,All Schools
 Student Attributes: One student depicted individually,Student Attributes,"One student depicted
-individually",1736,0.1975806451612903,0.00955923543115278,Studywide,All Schools
-Student Attributes: On rug,Student Attributes,On rug,1736,0.10426267281105991,0.007336772011983437,Studywide,All Schools
+individually",1739,0.1960897067280046,0.009523713171241763,Studywide,All Schools
+Student Attributes: On rug,Student Attributes,On rug,1739,0.10235767682576193,0.007270880127290542,Studywide,All Schools
 Student Attributes: Student desks clustered,Student Attributes,"Student desks
-clustered",1736,0.1889400921658986,0.009398072453613357,Studywide,All Schools
+clustered",1739,0.18976423231742381,0.009405632339550113,Studywide,All Schools
 Student Attributes: Student desks in rows/grid,Student Attributes,"Student desks in
-rows/grid",1736,0.14170506912442396,0.00837261704268377,Studywide,All Schools
+rows/grid",1739,0.14318573893041978,0.008401722626580725,Studywide,All Schools
 Student Attributes: Students depicted negatively,Student Attributes,"Students depicted
-negatively",1736,0.029953917050691243,0.004092354571504228,Studywide,All Schools
+negatively",1739,0.029902242668200116,0.0040854015097355175,Studywide,All Schools
 Student Attributes: Students depicted neutrally,Student Attributes,"Students depicted
-neutrally",1736,0.10023041474654378,0.0072096748441303656,Studywide,All Schools
+neutrally",1739,0.10005750431282347,0.007197925163882436,Studywide,All Schools
 Student Attributes: Students depicted positively,Student Attributes,"Students depicted
-positively",1736,0.47580645161290325,0.011989781245019624,Studywide,All Schools
+positively",1739,0.476710753306498,0.011980459997115757,Studywide,All Schools
 Student Attributes: Student to student communication,Student Attributes,"Student to student
-communication",1736,0.04723502304147465,0.005093018085747942,Studywide,All Schools
+communication",1739,0.047153536515238646,0.0050844468561255015,Studywide,All Schools
 Student Attributes: Student to teacher communication,Student Attributes,"Student to teacher
-communication",1736,0.0748847926267281,0.006318950979038595,Studywide,All Schools
-Student Attributes: Working individually,Student Attributes,Working individually,1736,0.39055299539170507,0.011712732380485409,Studywide,All Schools
+communication",1739,0.07590569292696953,0.0063528768393484435,Studywide,All Schools
+Student Attributes: Working individually,Student Attributes,Working individually,1739,0.39160437032777456,0.0117082482376312,Studywide,All Schools
 Student Attributes: Working in small groups,Student Attributes,"Working in small
-groups",1736,0.18490783410138248,0.00932032970528237,Studywide,All Schools
+groups",1739,0.18516388729154687,0.009317263822644169,Studywide,All Schools
 Teacher Attributes: At front of the room/board,Teacher Attributes,"At front of the
-room/board",1736,0.2868663594470046,0.010858642456710074,Studywide,All Schools
-Teacher Attributes: At teacher desk,Teacher Attributes,At teacher desk,1736,0.10253456221198157,0.0072827309760248645,Studywide,All Schools
+room/board",1739,0.288671650373778,0.01086956691113271,Studywide,All Schools
+Teacher Attributes: At teacher desk,Teacher Attributes,At teacher desk,1739,0.10063254744105808,0.007216272600150997,Studywide,All Schools
 Teacher Attributes: Can't discern teacher depiction,Teacher Attributes,"Can't discern
-teacher depiction",1736,0.11578341013824885,0.0076816189183984375,Studywide,All Schools
+teacher depiction",1739,0.11500862564692352,0.0076526145593274345,Studywide,All Schools
 Teacher Attributes: More than one adult/teacher depicted,Teacher Attributes,"More than one adult/
-teacher depicted",1736,0.032834101382488476,0.004278221988472224,Studywide,All Schools
-Teacher Attributes: Speaking/thinking,Teacher Attributes,Speaking/thinking,1736,0.09619815668202765,0.007078972854594453,Studywide,All Schools
+teacher depicted",1739,0.03220241518113859,0.004234592299549781,Studywide,All Schools
+Teacher Attributes: Speaking/thinking,Teacher Attributes,Speaking/thinking,1739,0.097757331799885,0.007123795837487711,Studywide,All Schools
 Teacher Attributes: Teacher depicted negatively,Teacher Attributes,"Teacher depicted
-negatively",1736,0.01152073732718894,0.0025619708212862432,Studywide,All Schools
+negatively",1739,0.011500862564692352,0.0025575755300747344,Studywide,All Schools
 Teacher Attributes: Teacher depicted neutrally,Teacher Attributes,"Teacher depicted
-neutrally",1736,0.06336405529953917,0.00584867047112828,Studywide,All Schools
+neutrally",1739,0.06325474410580793,0.005838918544246891,Studywide,All Schools
 Teacher Attributes: Teacher depicted on the rug,Teacher Attributes,"Teacher depicted on
-the rug",1736,0.017857142857142856,0.0031793883472917843,Studywide,All Schools
+the rug",1739,0.017826336975273145,0.003173951689001904,Studywide,All Schools
 Teacher Attributes: Teacher depicted positively,Teacher Attributes,"Teacher depicted
-positively",1736,0.3588709677419355,0.011515747800667967,Studywide,All Schools
-Teacher Attributes: Teacher is depicted,Teacher Attributes,Teacher is depicted,1736,0.5432027649769585,0.011958948058813453,Studywide,All Schools
+positively",1739,0.3599769982748706,0.011513577290240658,Studywide,All Schools
+Teacher Attributes: Teacher is depicted,Teacher Attributes,Teacher is depicted,1739,0.5434157561817137,0.011948178095010397,Studywide,All Schools
 Teacher Attributes: Working with individual student,Teacher Attributes,"Working with
-individual student",1736,0.06682027649769585,0.005994970377329083,Studywide,All Schools
+individual student",1739,0.06670500287521564,0.005984994924816277,Studywide,All Schools
 Teacher Attributes: Working with small groups of students,Teacher Attributes,"Working with small
-groups of students",1736,0.10656682027649769,0.007407852095977717,Studywide,All Schools
+groups of students",1739,0.10925819436457734,0.007483039562019494,Studywide,All Schools
 Teacher Attributes: Working with whole class,Teacher Attributes,"Working with whole
-class",1736,0.17108294930875576,0.009040847865309617,Studywide,All Schools
+class",1739,0.1696377228292122,0.00900264523913954,Studywide,All Schools
 Tools and Technology Depicted: Arrays or tools depicting visual display of math concept,Tools and Technology Depicted,"Arrays or tools
 depicting visual
 display of math
-concept",1736,0.10483870967741936,0.007354645442531969,Studywide,All Schools
-Tools and Technology Depicted: Books/paper/pencil,Tools and Technology Depicted,Books/paper/pencil,1736,0.34965437788018433,0.011448322528151934,Studywide,All Schools
+concept",1739,0.1046578493387004,0.007342695732218302,Studywide,All Schools
+Tools and Technology Depicted: Books/paper/pencil,Tools and Technology Depicted,Books/paper/pencil,1739,0.3530764807360552,0.011463994756162922,Studywide,All Schools
 Tools and Technology Depicted: Computer technology for students,Tools and Technology Depicted,"Computer technology
-for students",1736,0.03341013824884793,0.0043143017247705105,Studywide,All Schools
+for students",1739,0.03335250143760782,0.0043069852598377045,Studywide,All Schools
 Tools and Technology Depicted: Computer technology for teachers,Tools and Technology Depicted,"Computer technology
-for teachers",1736,0.0478110599078341,0.005122429767160782,Studywide,All Schools
+for teachers",1739,0.04600345025876941,0.005025088542296164,Studywide,All Schools
 Tools and Technology Depicted: Computer technology other,Tools and Technology Depicted,"Computer technology
-other",1736,0.016705069124423964,0.0030769206686453105,Studywide,All Schools
-Tools and Technology Depicted: Dot cards,Tools and Technology Depicted,Dot cards,1736,0.020161290322580645,0.003374323515945782,Studywide,All Schools
-Tools and Technology Depicted: Flash cards,Tools and Technology Depicted,Flash cards,1736,0.00576036866359447,0.0018168577898403928,Studywide,All Schools
-Tools and Technology Depicted: Games,Tools and Technology Depicted,Games,1736,0.08986175115207373,0.0068658036981752504,Studywide,All Schools
+other",1739,0.01667625071880391,0.0030716560663728073,Studywide,All Schools
+Tools and Technology Depicted: Dot cards,Tools and Technology Depicted,Dot cards,1739,0.020126509488211614,0.0033685604810709912,Studywide,All Schools
+Tools and Technology Depicted: Flash cards,Tools and Technology Depicted,Flash cards,1739,0.0063254744105807935,0.0019017076064734343,Studywide,All Schools
+Tools and Technology Depicted: Games,Tools and Technology Depicted,Games,1739,0.09028177113283496,0.006874301844829639,Studywide,All Schools
 Tools and Technology Depicted: Manipulative/blocks/hands-on math tools,Tools and Technology Depicted,"Manipulative/blocks/
-hands-on math tools",1736,0.07027649769585254,0.00613666223462069,Studywide,All Schools
-Tools and Technology Depicted: Student Whiteboards,Tools and Technology Depicted,Student Whiteboards,1736,0.024193548387096774,0.0036887726380906444,Studywide,All Schools
+hands-on math tools",1739,0.07015526164462335,0.0061264720599337975,Studywide,All Schools
+Tools and Technology Depicted: Student Whiteboards,Tools and Technology Depicted,Student Whiteboards,1739,0.024726854514088556,0.003724969179128728,Studywide,All Schools
 Tools and Technology Depicted: Whiteboard/Smart board,Tools and Technology Depicted,"Whiteboard/Smart
-board",1736,0.5005760368663594,0.012003833877988044,Studywide,All Schools
-Type of Math Depicted: Addition,Type of Math Depicted,Addition,1736,0.29723502304147464,0.01097249283052193,Studywide,All Schools
-Type of Math Depicted: Can't discern math,Type of Math Depicted,Can't discern math,1736,0.041474654377880185,0.004786779790425528,Studywide,All Schools
-Type of Math Depicted: Clocks/Calendar,Type of Math Depicted,Clocks/Calendar,1736,0.07546082949308756,0.006341232923386989,Studywide,All Schools
-Type of Math Depicted: Counting/Number Line,Type of Math Depicted,Counting/Number Line,1736,0.11693548387096774,0.007714710544131213,Studywide,All Schools
-Type of Math Depicted: Division,Type of Math Depicted,Division,1736,0.09907834101382489,0.007172707773531567,Studywide,All Schools
-Type of Math Depicted: Fractions/Decimals,Type of Math Depicted,Fractions/Decimals,1736,0.07085253456221198,0.006159852018709939,Studywide,All Schools
-Type of Math Depicted: Geometry,Type of Math Depicted,Geometry,1736,0.017857142857142856,0.0031793883472917843,Studywide,All Schools
-Type of Math Depicted: Multiplication,Type of Math Depicted,Multiplication,1736,0.24193548387096775,0.010281420682371166,Studywide,All Schools
-Type of Math Depicted: Subtraction,Type of Math Depicted,Subtraction,1736,0.08755760368663594,0.0067857822938163885,Studywide,All Schools
+board",1739,0.503737780333525,0.011993142195553773,Studywide,All Schools
+Type of Math Depicted: Addition,Type of Math Depicted,Addition,1739,0.2995974698102358,0.010987984490380407,Studywide,All Schools
+Type of Math Depicted: Can't discern math,Type of Math Depicted,Can't discern math,1739,0.041403105232892465,0.004778697943305521,Studywide,All Schools
+Type of Math Depicted: Clocks/Calendar,Type of Math Depicted,Clocks/Calendar,1739,0.07418056354226567,0.006286129521283587,Studywide,All Schools
+Type of Math Depicted: Counting/Number Line,Type of Math Depicted,Counting/Number Line,1739,0.11615871190339276,0.007685783565613549,Studywide,All Schools
+Type of Math Depicted: Division,Type of Math Depicted,Division,1739,0.09890741805635422,0.007161009561911515,Studywide,All Schools
+Type of Math Depicted: Fractions/Decimals,Type of Math Depicted,Fractions/Decimals,1739,0.07073030477285797,0.006149626873128905,Studywide,All Schools
+Type of Math Depicted: Geometry,Type of Math Depicted,Geometry,1739,0.017826336975273145,0.003173951689001904,Studywide,All Schools
+Type of Math Depicted: Multiplication,Type of Math Depicted,Multiplication,1739,0.24151811385853938,0.010266503863275779,Studywide,All Schools
+Type of Math Depicted: Subtraction,Type of Math Depicted,Subtraction,1739,0.0885566417481311,0.006814759372930644,Studywide,All Schools
