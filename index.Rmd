@@ -134,7 +134,7 @@ knitr::kable(
   
 ```
 
-```{r studywide_results, fig.height = 12}
+```{r studywide_results, fig.height = 14}
 
 ggplot() +
     geom_bar(
