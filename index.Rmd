@@ -135,6 +135,10 @@ knitr::kable(
   
 ```
 
+## Studywide Results
+
+[Interactive visualizations by grade](https://willowbrook.shinyapps.io/overall_results/)
+
 ```{r studywide_results, fig.height = 14}
 
 ggplot() +
@@ -234,6 +238,8 @@ ggplot(
 
 ### Math subjects by grade
 
+[Interactive visualization](https://willowbrook.shinyapps.io/math_emergence/)
+
 ```{r subject_data}
 
 subjects <- c("Division", "Multiplication", "Subtraction", "Addition")
@@ -293,57 +299,3 @@ ggplot(
     legend.key.height = unit(8, "mm")
   )
 ```
-
-
-```{r all_data_app}
-# inputPanel(
-#   selectInput("type", label = "Drawing Features",
-#               choices = c(field_types), selected = 1)
-# )
-# 
-# renderPlot({
-#   ggplot(
-#     data = filter(grade_summary, field_type == input$type),
-#     aes(
-#       x = field_label,
-#       y = mu,
-#       fill = source
-#     )
-#   ) +
-#     geom_bar(
-#       aes(
-#         x = field_label,
-#         y = mu
-#       ),
-#       stat = "identity",
-#       width = 0.7,
-#       position = "dodge"
-#     ) +
-#     # geom_text(
-#     #   aes(
-#     #     x = field_label,
-#     #     y = mu + 0.05,
-#     #     label = scales::percent(round(mu, 2))
-#     #   ),
-#     #   vjust = 0.5,
-#     #   position = position_dodge(0.7),
-#     #   size = 1
-#     # ) +
-#     ggtitle(input$type) +
-#     guides(fill = guide_legend(reverse = T)) +
-#     coord_flip() +
-#     scale_fill_brewer(palette = "YlGn", direction = -1) +
-#     scale_y_continuous(
-#       breaks = seq(from = 0, to = 1, by = 0.2),
-#       limits = c(0, 1.1),
-#       labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
-#     ) +
-#     report_theme +
-#     theme(
-#       axis.text.y = element_text(size = 10, color = "black")
-#     )
-# }, height = 850
-# )
-
-```
-
