@@ -1,4 +1,5 @@
 ---
+title: "Drawing Math"
 output: 
   html_document: 
     toc: yes
@@ -173,7 +174,6 @@ ggplot() +
 
 ```
 
-
 ### Classroom tools and resources by grade
 
 ```{r tool_figure}
@@ -246,105 +246,6 @@ subject_data <- grade_summary %>%
       levels = subjects
     )
   )
-
-```
-
-
-```{r subject_app}
-# inputPanel(
-#   selectInput("grade", label = "Grade",
-#               choices = c(1:7), selected = 1)
-# )
-# 
-# renderPlot({
-#    ggplot(
-#   data = filter(subject_data, grade == input$grade),
-#   aes(
-#     x = field_label,
-#     y = mu,
-#     fill = field_label
-#   )
-# ) +
-#   geom_bar(
-#     stat = "identity",
-#     width = 0.7,
-#     position = "dodge",
-#     show.legend = F
-#   ) +
-#   geom_text(
-#     aes(
-#       x = field_label,
-#       y = mu + 0.05,
-#       label = scales::percent(round(mu, 2))
-#     ),
-#     vjust = 0.5,
-#     position = position_dodge(0.7),
-#     size = 4
-#   ) +
-#   scale_fill_brewer(palette = "Set3") +
-#     guides(fill = guide_legend(reverse = T)) +
-#   ggtitle(paste("Grade", input$grade)) +
-#   coord_flip() +
-#   scale_y_continuous(
-#     breaks = seq(from = 0, to = 1, by = 0.2),
-#     limits = c(0, 1.1),
-#     labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
-#   ) +
-#   report_theme +
-#   theme(
-#     legend.text = element_text(size = 6),
-#     legend.key.height = unit(8, "mm"),
-#     axis.text.y = element_text(size = 10, color = "black")
-#   )
-# })
-```
-
-```{r subject_grade}
-
-for (g in unique(grade_summary$grade)) {
-  
-plot <- ggplot(
-  data = filter(subject_data, grade == g),
-  aes(
-    x = field_label,
-    y = mu,
-    fill = field_label
-  )
-) +
-  geom_bar(
-    stat = "identity",
-    width = 0.7,
-    position = "dodge",
-    show.legend = F
-  ) +
-  geom_text(
-    aes(
-      x = field_label,
-      y = mu + 0.05,
-      label = scales::percent(round(mu, 2))
-    ),
-    vjust = 0.5,
-    position = position_dodge(0.7),
-    size = 4
-  ) +
-  scale_fill_brewer(palette = "Set3") +
-    guides(fill = guide_legend(reverse = T)) +
-  ggtitle(paste("Grade", g)) +
-  coord_flip() +
-  scale_y_continuous(
-    breaks = seq(from = 0, to = 1, by = 0.2),
-    limits = c(0, 1.1),
-    labels = scales::percent(seq(from = 0, to = 1, by = 0.2))
-  ) +
-  report_theme +
-  theme(
-    legend.text = element_text(size = 6),
-    legend.key.height = unit(8, "mm")
-  )
-
-print(plot)
-  
-}
 
 ```
 
