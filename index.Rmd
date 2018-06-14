@@ -94,8 +94,8 @@ grade_summary <- read_csv("data/grade_summary.csv") %>%
     )
   )
 
-response_rates <- read_csv("data/response_rates.csv") %>%
-  mutate(school = c(paste("School", 1:9), "All Schools"))
+  response_rates <- read_csv("data/response_rates.csv") %>%
+  mutate(school = c(paste("School", 1:10), "All Schools"))
 
 study_summary <- read_csv("data/study_summary.csv") %>%
   mutate(
